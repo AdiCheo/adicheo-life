@@ -19,7 +19,8 @@ import { MenuItem } from 'primeng/primeng';
     '../../node_modules/primeng/resources/primeng.min.css'
   ],
   template: `
-    <p-menubar [model]="items"></p-menubar>
+    <p-menubar [model]="menuItems"></p-menubar>
+    <p-breadcrumb [model]="locItems"></p-breadcrumb>
 
     <main>
       <router-outlet></router-outlet>
@@ -42,7 +43,10 @@ export class AppComponent {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
-  private items: MenuItem[];
+  private menuItems: MenuItem[];
+  private locItems: MenuItem[];
+
+
 
   constructor(
     public appState: AppState) {
@@ -51,7 +55,18 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
-    this.items = [
+    this.locItems = [];
+    this.locItems.push({label: 'Categories'});
+    this.locItems.push({label: 'Sports'});
+    this.locItems.push({label: 'Football'});
+    this.locItems.push({label: 'Countries'});
+    this.locItems.push({label: 'Spain'});
+    this.locItems.push({label: 'F.C. Barcelona'});
+    this.locItems.push({label: 'Squad'});
+    this.locItems.push({label: 'Lionel Messi',
+      url: 'https://en.wikipedia.org/wiki/Lionel_Messi'});
+
+    this.menuItems = [
       {label: 'Index', icon: 'fa-download', routerLink: ['./']},
       {label: 'Home', icon: 'fa-download', routerLink: ['./home']},
       {label: 'Detail', icon: 'fa-download', routerLink: ['./detail']},

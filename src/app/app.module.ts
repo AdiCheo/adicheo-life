@@ -5,7 +5,13 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
-import { InputTextModule, MenubarModule, MenuItem, MenuModule } from 'primeng/primeng';
+import {
+  InputTextModule,
+  MenubarModule,
+  MenuItem,
+  MenuModule,
+  BreadcrumbModule
+} from 'primeng/primeng';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -51,6 +57,7 @@ type StoreType = {
     InputTextModule,
     MenubarModule,
     MenuModule,
+    BreadcrumbModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
