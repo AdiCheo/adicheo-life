@@ -24,7 +24,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Life',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
@@ -140,10 +140,19 @@ module.exports = function (options) {
         /* File loader for supporting images, for example, in CSS files.
          */
         {
-          test: /\.(jpg|png|gif)$/,
+          test: /\.(jpg|png|gif|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
           loader: 'file'
         },
 
+        /*
+         * Needed to properly load font-awesome fonts.
+         * Font awesome font urls are of the format:
+         *  [dot][extension]?=[version-number], for example .woff?v=4.2.0
+        */
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: "url-loader?limit=10000&minetype=application/font-woff"
+        },
       ],
 
     },

@@ -17,6 +17,9 @@ import '@angular/router';
 // AngularClass
 import '@angularclass/hmr';
 
+// PrimeNg
+import 'primeng/primeng';
+
 // RxJS
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';

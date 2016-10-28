@@ -4,6 +4,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 import { AppState } from './app.service';
+import { MenuItem } from 'primeng/primeng';
 
 /*
  * App Component
@@ -13,9 +14,12 @@ import { AppState } from './app.service';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.css'
+    './app.component.css',
+    '../../node_modules/primeng/resources/themes/omega/theme.css',
+    '../../node_modules/primeng/resources/primeng.min.css'
   ],
   template: `
+    <p-menubar [model]="items"></p-menubar>
     <nav>
       <span>
         <a [routerLink]=" ['./'] ">
@@ -46,6 +50,7 @@ import { AppState } from './app.service';
       <router-outlet></router-outlet>
     </main>
 
+    <input type="text" pInputText/>
     <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
     <footer>
@@ -62,6 +67,7 @@ export class AppComponent {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
+  private items: MenuItem[];
 
   constructor(
     public appState: AppState) {
@@ -70,6 +76,81 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
+    this.items = [
+      {
+        label: 'File',
+        icon: 'fa-file-o',
+        items: [{
+          label: 'New',
+          icon: 'fa-plus',
+          items: [
+            { label: 'Project' },
+            { label: 'Other' },
+          ]
+        },
+        { label: 'Open' },
+        { label: 'Quit' }
+        ]
+      },
+      {
+        label: 'Edit',
+        icon: 'fa-edit',
+        items: [
+          { label: 'Undo', icon: 'fa-mail-forward' },
+          { label: 'Redo', icon: 'fa-mail-reply' }
+        ]
+      },
+      {
+        label: 'Help',
+        icon: 'fa-question',
+        items: [
+          {
+            label: 'Contents'
+          },
+          {
+            label: 'Search',
+            icon: 'fa-search',
+            items: [
+              {
+                label: 'Text',
+                items: [
+                  {
+                    label: 'Workspace'
+                  }
+                ]
+              },
+              {
+                label: 'File'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        label: 'Actions',
+        icon: 'fa-gear',
+        items: [
+          {
+            label: 'Edit',
+            icon: 'fa-refresh',
+            items: [
+              { label: 'Save', icon: 'fa-save' },
+              { label: 'Update', icon: 'fa-save' },
+            ]
+          },
+          {
+            label: 'Other',
+            icon: 'fa-phone',
+            items: [
+              { label: 'Delete', icon: 'fa-minus' }
+            ]
+          }
+        ]
+      },
+      {
+        label: 'Quit', icon: 'fa-minus'
+      }
+    ];
   }
 
 }
