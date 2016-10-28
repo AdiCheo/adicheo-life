@@ -15,36 +15,11 @@ import { MenuItem } from 'primeng/primeng';
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.component.css',
-    '../../node_modules/primeng/resources/themes/omega/theme.css',
+    '../../node_modules/primeng/resources/themes/vader/theme.css',
     '../../node_modules/primeng/resources/primeng.min.css'
   ],
   template: `
     <p-menubar [model]="items"></p-menubar>
-    <nav>
-      <span>
-        <a [routerLink]=" ['./'] ">
-          Index
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./home'] ">
-          Home
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./detail'] ">
-          Detail
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./about'] ">
-          About
-        </a>
-      </span>
-    </nav>
 
     <main>
       <router-outlet></router-outlet>
@@ -77,6 +52,10 @@ export class AppComponent {
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
     this.items = [
+      {label: 'Index', icon: 'fa-download', routerLink: ['./']},
+      {label: 'Home', icon: 'fa-download', routerLink: ['./home']},
+      {label: 'Detail', icon: 'fa-download', routerLink: ['./detail']},
+      {label: 'About', icon: 'fa-download', routerLink: ['./about']},
       {
         label: 'File',
         icon: 'fa-file-o',
