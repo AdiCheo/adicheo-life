@@ -30,19 +30,14 @@ import { MenuItem } from 'primeng/primeng';
     <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
     <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div>
+      <span>Created by <a [href]="url">ADI CHEO</a></span>
     </footer>
   `
 })
 export class AppComponent {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  url = 'https://adicheo.com';
   private menuItems: MenuItem[];
   private locItems: MenuItem[];
 
