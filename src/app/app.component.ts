@@ -45,13 +45,13 @@ export class AppComponent {
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
     this.locItems = [];
-    this.locItems.push({label: 'Categories'});
+    this.locItems.push({ label: 'Categories' });
 
     this.menuItems = [
-      {label: 'Index', icon: 'fa-download', routerLink: ['./']},
-      {label: 'Home', icon: 'fa-download', routerLink: ['./home']},
-      {label: 'Detail', icon: 'fa-download', routerLink: ['./detail']},
-      {label: 'About', icon: 'fa-download', routerLink: ['./about']},
+      { label: 'Index', icon: 'fa-download', routerLink: ['./'] },
+      { label: 'Home', icon: 'fa-download', routerLink: ['./home'] },
+      { label: 'Detail', icon: 'fa-download', routerLink: ['./detail'] },
+      { label: 'About', icon: 'fa-download', routerLink: ['./about'] },
       {
         label: 'File',
         icon: 'fa-file-o',
