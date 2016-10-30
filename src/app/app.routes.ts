@@ -1,5 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home';
+import { AuthCompoenent } from './auth';
+import { UserComponent } from './user';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 
@@ -7,8 +9,11 @@ import { DataResolver } from './app.resolver';
 
 
 export const ROUTES: Routes = [
-  { path: '',      component: HomeComponent },
-  { path: 'home',  component: HomeComponent },
+  { path: 'auth', component: AuthCompoenent },
+
+  { path: '', component: HomeComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   {
     path: 'detail', loadChildren: () => System.import('./+detail').then((comp: any) => {
@@ -16,5 +21,5 @@ export const ROUTES: Routes = [
     })
     ,
   },
-  { path: '**',    component: NoContentComponent },
+  { path: '**', component: NoContentComponent },
 ];
