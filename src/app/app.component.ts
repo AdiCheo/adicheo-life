@@ -26,7 +26,6 @@ import { MenuItem } from 'primeng/primeng';
       <router-outlet></router-outlet>
     </main>
 
-    <input type="text" pInputText/>
     <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
     <footer>
@@ -35,31 +34,18 @@ import { MenuItem } from 'primeng/primeng';
   `
 })
 export class AppComponent {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'Angular 2 Webpack Starter';
   url = 'https://adicheo.com';
   private menuItems: MenuItem[];
   private locItems: MenuItem[];
 
-
-
   constructor(
     public appState: AppState) {
-
   }
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
     this.locItems = [];
     this.locItems.push({label: 'Categories'});
-    this.locItems.push({label: 'Sports'});
-    this.locItems.push({label: 'Football'});
-    this.locItems.push({label: 'Countries'});
-    this.locItems.push({label: 'Spain'});
-    this.locItems.push({label: 'F.C. Barcelona'});
-    this.locItems.push({label: 'Squad'});
-    this.locItems.push({label: 'Lionel Messi',
-      url: 'https://en.wikipedia.org/wiki/Lionel_Messi'});
 
     this.menuItems = [
       {label: 'Index', icon: 'fa-download', routerLink: ['./']},
