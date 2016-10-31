@@ -84,7 +84,7 @@ export class AuthService implements CanActivate {
 
   loginWithToken(token: string) {
     this.setAuthTokens(token);
-    this.router.navigate(['sessions']);
+    this.router.navigate(['home']);
   }
 
   signout() {

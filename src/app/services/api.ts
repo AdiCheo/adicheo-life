@@ -12,7 +12,7 @@ export class ApiService {
     Accept: 'application/json'
   });
 
-  AUTH_HEADER_KEY: string = 'api_auth_header';
+  AUTH_HEADER_KEY: string = 'code';
 
   constructor(
     private http: Http,

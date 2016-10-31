@@ -9,6 +9,7 @@ import { DataResolver } from './app.resolver';
 
 
 export const ROUTES: Routes = [
+  { path: ':token', component: AuthCompoenent },
   { path: 'auth', component: AuthCompoenent },
 
   { path: '', component: HomeComponent },
