@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
 import {
+  BreadcrumbModule,
+  DataScrollerModule,
+  GrowlModule,
   InputTextModule,
   MenubarModule,
   MenuItem,
   MenuModule,
-  BreadcrumbModule
 } from 'primeng/primeng';
 /*
  * Platform and Environment providers/directives/pipes
@@ -46,22 +48,24 @@ type StoreType = {
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
-    AppComponent,
     AboutComponent,
-    HomeComponent,
-    UserComponent,
+    AppComponent,
     AuthCompoenent,
+    HomeComponent,
     NoContentComponent,
+    UserComponent,
     XLarge,
   ],
   imports: [ // import Angular's modules
+    BreadcrumbModule,
     BrowserModule,
+    DataScrollerModule,
     FormsModule,
+    GrowlModule,
     HttpModule,
     InputTextModule,
     MenubarModule,
     MenuModule,
-    BreadcrumbModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

@@ -124,10 +124,11 @@ user = {
   }
 
   authenticate() {
-    return this.api.post(`http://localhost:8088`, this.user)
-      .do(res => this.auth.setAuthTokens(res.token))
-      .do(res => this.storeHelper.update('user', res.data))
-      .map(res => res.data)
+    return this.api.put(`http://localhost:8088/api/user`, this.user)
+      .map(this.api.getJson)
+      .do(res => this.auth.setAuthTokens(res.id_user))
+      .do(res => this.storeHelper.update('user', res))
+      .map(res => res)
     .subscribe(() => this.router.navigate(['']))
   }
 

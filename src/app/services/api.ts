@@ -52,7 +52,7 @@ export class ApiService {
     Object.keys(headers).forEach(header => this.headers.set(header, headers[header]));
   }
 
-  private getJson(response: Response) {
+  getJson(response: Response) {
     return response.json();
   }
 
